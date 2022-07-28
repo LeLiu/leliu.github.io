@@ -4,6 +4,20 @@ You can use the [editor on GitHub](https://github.com/LeLiu/liule.github.io/edit
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
+<div class="blog-index">  
+  {% assign post = site.posts.first %}
+  {% assign content = post.content %}
+  <h1 class="entry-title">
+    <a href="{{ root_url }}{{ page.url }}">{{ page.title }}</a>
+  </h1>
+  {% if post.title %}
+    <h1 class="entry-title">
+      <a href="{{ root_url }}{{ post.url }}">{{ post.title }}</a>
+    </h1>      
+  {% endif %}
+  <div class="entry-content">{{ content }}</div>
+</div>
+
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
